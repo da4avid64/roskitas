@@ -1,0 +1,92 @@
+:root{
+    --light-green:#DFF6E1;
+    --green:#129643;
+    --amrillo-secundario:#E4B011;
+    --amarillo-claro:#EDC343;
+    --sm: 15px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Hind vadadora', sans-serif;
+  }
+
+nav{
+    display: flex;
+    height: 60px;
+    padding: 0 24px;
+    background: var(--green);
+    justify-content: space-between;
+}
+.burguer-menu {
+    display: none;
+    width: 25px;
+  }
+.logo{
+    width: 100px;
+}
+.izquierda ul, .derecha ul {
+    list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      height: 60px;
+}
+.izquierda{
+    display: flex;
+}
+.izquierda ul{
+    margin-left: 12px;
+}
+.izquierda ul  li a, .derecha ul li a{
+    text-decoration: none;
+      color: var(--light-green);
+      border: 1px solid var(--green);
+      padding: 8px;
+      border-radius: 8px;
+} 
+.izquierda ul li a:hover, .derecha ul li a:hover {
+    border: 1px solid var(--light-green);
+    color: var(--amarillo-claro);
+}
+      
+
+.derecha-email{
+    color: var(--light-green);
+      font-size: var(--sm);
+      margin-right: 12px;
+}
+.derecha-shopping-cart{
+    position: relative;
+}
+.derecha-shopping-cart div {
+    width: 16px;
+    height: 16px;
+    background-color: var(--amarillo-claro);
+    border-radius: 50%;
+    font-size: var(--sm);
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .burguer-menu{
+      display: block;
+    }
+    .izquierda ul {
+      display: none;
+    }
+    .derecha-email {
+      display: none;
+    }
+}
