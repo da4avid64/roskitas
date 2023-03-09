@@ -3,7 +3,7 @@
     --green:#129643;
     --green-background:#239D33;
     --logo:#f6e01c;
-    --amrillo-secundario:#E4B011;
+    --amarillo-secundario:#E4B011;
     --amarillo-claro:#EDC343;
     --amarillo-letra:#FFF;
     --sm: 16px;
@@ -26,6 +26,7 @@ nav{
     padding: 0 24px 16px;
     background: var(--green-background);
     justify-content: center;
+    align-items: center;
 }
 
 .burguer-menu {
@@ -53,6 +54,9 @@ nav{
     font-weight: 500 ;
     font-size: var(--sm);
 }
+.shopping {
+    display: block;
+}
 .shopping ul {
     list-style: none;
       padding: 0;
@@ -65,16 +69,16 @@ nav{
     display: flex;
 }
 
-.shopping ul  li a, .derecha ul li a{
+.menu ul li a{
     text-decoration: none;
       color: var(--light-green);
-      border: 1px solid var(--green);
+      border: 1px solid var(--green-background);
       padding: 8px;
       border-radius: 8px;
 } 
-.shopping ul li a:hover, .derecha ul li a:hover {
+.menu ul li a:hover {
     border: 1px solid var(--light-green);
-    color: var(--amarillo-claro);
+    color: var(--amarillo-secundario);
 }
       
 
@@ -101,10 +105,14 @@ nav{
     align-items: center;
   }
   @media (max-width: 640px) {
+    nav {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 24px;
+    }
     .burguer-menu{
       display: block;
     }
-    .shopping ul {
+    .menu-list ul {
       display: none;
     }
     .derecha-email {
