@@ -2,10 +2,14 @@
     --light-green:#DFF6E1;
     --green:#129643;
     --green-background:#239D33;
+    --green-menu:#9CC6A5;
+    --hospital-green: #ACD9B2;
     --logo:#f6e01c;
     --amarillo-secundario:#E4B011;
     --amarillo-claro:#EDC343;
-    --amarillo-letra:#FFF;
+    --amarillo-borde:#FFFBA5;
+    --white:#FFF;
+    --black: #000000;
     --sm: 16px;
 }
 *{
@@ -19,6 +23,9 @@ body {
     font-family: 'Hind vadadora', sans-serif;
   }
 
+  .inactive{
+    display: none;
+  }
 nav{
     display: grid;
     grid-template-columns: 1fr;
@@ -86,6 +93,7 @@ nav{
     color: var(--light-green);
       font-size: var(--sm);
       margin-right: 24px;
+      cursor: pointer;
 }
 .derecha-shopping-cart{
     position: relative;
@@ -104,8 +112,52 @@ nav{
     justify-content: center;
     align-items: center;
   }
+
+  .desktop-menu {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    right: 0;
+    height: auto;
+    border: 1px solid var(--amarillo-borde);
+    border-radius: 6px;
+    padding: 20px 20px 0 20px;
+    background-color: var(--green-background);
+    margin: 30px 3vw 0 0;
+  }
+  .desktop-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .desktop-menu ul li {
+    text-align: end;
+  }
+  .desktop-menu ul li:nth-child(1),
+  .desktop-menu ul li:nth-child(2) {
+    font-weight: bold;
+  }
+  .desktop-menu ul li:last-child {
+    padding-top: 20px;
+    border-top: 1px solid var(--amarillo-secundario);
+  }
+  .desktop-menu ul li:last-child a {
+    color: var(--hospital-green);
+    font-size: var(--sm);
+  }
+  .desktop-menu ul li a {
+    color: var(--black);
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
 .form-container {
   display: grid;
+}
+@media (max-width: 768px){
+  .desktop-menu {
+    margin: 124px 124px 0 0;
+  }
 }
   @media (max-width: 640px) {
     nav {
@@ -120,5 +172,8 @@ nav{
     }
     .derecha-email {
       display: none;
+    }
+    .desktop-menu {
+      margin-top: 45px;
     }
 }
