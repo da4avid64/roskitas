@@ -1,9 +1,12 @@
 :root{
     --light-green:#DFF6E1;
     --green:#129643;
-    --amrillo-secundario:#E4B011;
+    --green-background:#239D33;
+    --logo:#f6e01c;
+    --amarillo-secundario:#E4B011;
     --amarillo-claro:#EDC343;
-    --sm: 15px;
+    --amarillo-letra:#FFF;
+    --sm: 16px;
 }
 *{
     margin: 0;
@@ -17,50 +20,72 @@ body {
   }
 
 nav{
-    display: flex;
-    height: 60px;
-    padding: 0 24px;
-    background: var(--green);
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100vw;
+    padding: 0 24px 8px;
+    background: var(--green-background);
+    justify-content: center;
+    align-items: center;
 }
+
 .burguer-menu {
     display: none;
     width: 25px;
   }
-.logo{
-    width: 100px;
+.menu{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
 }
-.izquierda ul, .derecha ul {
+.logo{
+  color: var(--logo);
+  font-weight: 700;
+  font-size: 8vw;
+  text-align: center;
+  padding: 8px 0;
+}
+.menu ul li {
+  list-style: none;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: var(--amarillo-letra);
+    font-weight: 500 ;
+    font-size: var(--sm);
+}
+.shopping {
+    display: block;
+}
+.shopping ul {
     list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
       align-items: center;
-      height: 60px;
+
 }
-.izquierda{
+.shopping{
     display: flex;
 }
-.izquierda ul{
-    margin-left: 12px;
-}
-.izquierda ul  li a, .derecha ul li a{
+
+.menu ul li a{
     text-decoration: none;
       color: var(--light-green);
-      border: 1px solid var(--green);
+      border: 1px solid var(--green-background);
       padding: 8px;
       border-radius: 8px;
 } 
-.izquierda ul li a:hover, .derecha ul li a:hover {
+.menu ul li a:hover {
     border: 1px solid var(--light-green);
-    color: var(--amarillo-claro);
+    color: var(--amarillo-secundario);
 }
       
 
 .derecha-email{
     color: var(--light-green);
       font-size: var(--sm);
-      margin-right: 12px;
+      margin-right: 24px;
 }
 .derecha-shopping-cart{
     position: relative;
@@ -79,11 +104,18 @@ nav{
     justify-content: center;
     align-items: center;
   }
+.form-container {
+  display: grid;
+}
   @media (max-width: 640px) {
+    nav {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 24px;
+    }
     .burguer-menu{
       display: block;
     }
-    .izquierda ul {
+    .menu-list ul {
       display: none;
     }
     .derecha-email {
