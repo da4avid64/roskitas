@@ -21,3 +21,39 @@ function toggleCarritoSide(params) {
     aside.classList.toggle('inactive'); 
     DesktopMenu.classList.add('inactive');
 }
+
+const productList =[];
+productList.push({
+      nombre:'Panque',
+      price:199,
+      img:'./assets/okara.jfif'
+    }
+);
+productList.push({
+    nombre:'Panque de platano',
+    price:199,
+    img:'./assets/okara.jfif'
+  }
+);
+productList.push({
+    nombre:'Leche de soya',
+    price:199,
+    img:'./assets/okara.jfif'
+  }
+);
+productList.push({
+    nombre:'Rosca de reyes',
+    price:199,
+    img:'./assets/okara.jfif'
+  }
+);
+
+for (product of productList){
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+
+    const imagen = document.createElement('img');
+    imagen.setAttribute('src', product.img);
+
+    const productInfo = document.createElement
+}
