@@ -6,10 +6,12 @@ const menuCarrito = document.querySelector('.derecha-shopping-cart');
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
 const myOrderContent = document.querySelector('.my-order-content');
+const titleContainer = document.querySelector('.title-container');
 
 email.addEventListener('click', toggleDesktopMenu);
 burguerMenu.addEventListener('click', toggleMobileMenu);
 menuCarrito.addEventListener('click', toggleCarritoSide);
+titleContainer.addEventListener('click', hideShoppingCart);
 
 function toggleDesktopMenu() {
   DesktopMenu.classList.toggle('inactive');
@@ -25,6 +27,10 @@ function toggleCarritoSide() {
   MobileMenu.classList.add('inactive');
   shoppingCartContainer.classList.toggle('inactive');
   DesktopMenu.classList.add('inactive');
+}
+
+function hideShoppingCart() {
+  shoppingCartContainer.classList.add('inactive');
 }
 
 const productList = [];
@@ -72,6 +78,7 @@ function renderProducts(arr) {
 }
 
 renderProducts(productList);
+
 function addToCart() {
   const productImgSrc = this.parentNode.parentNode.querySelector('img').getAttribute('src');
   const productName = this.parentNode.parentNode.querySelector('div p:last-child').innerText;
@@ -101,7 +108,6 @@ function addToCart() {
   shoppingCartDiv.appendChild(productPriceParagraph);
   shoppingCartDiv.appendChild(closeIcon);
 
-  const orderDiv = myOrderContent.querySelector('.order');
   myOrderContent.insertBefore(shoppingCartDiv, orderDiv);
 
   const totalAmount = Array.from(document.querySelectorAll('.mount-price')).reduce((sum, element) => {
@@ -126,7 +132,7 @@ totalSpan.innerText = 'Total';
 orderParagraph.appendChild(totalSpan);
 
 const totalAmountParagraph = document.createElement('p');
-totalAmountParagraph.innerText = '$0';
+totalAmountParagraph.innerText = '$560.00';
 
 orderDiv.appendChild(orderParagraph);
 orderDiv.appendChild(totalAmountParagraph);
