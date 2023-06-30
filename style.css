@@ -70,6 +70,7 @@ nav {
 
 .shopping {
   display: block;
+  margin: 0px 0px 0px 32px
 }
 
 .shopping ul {
@@ -444,14 +445,9 @@ aside {
   color: #FF6600;
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #f8f8f8;
-  text-align: center;
-  padding: 20px;
+#shoppingCartContainer {
+  max-height: calc(100vh - 150px); /* Establece la altura máxima */
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
 }
 
 @media (max-width: 768px) {

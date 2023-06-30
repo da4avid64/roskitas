@@ -102,6 +102,10 @@ function addToCart() {
   const closeIcon = document.createElement('img');
   closeIcon.setAttribute('src', './assets/icon_close.png');
   closeIcon.setAttribute('alt', 'close');
+  closeIcon.addEventListener('click', function() {
+    shoppingCartDiv.remove();
+    recalculateTotal();
+  });
 
   shoppingCartDiv.appendChild(productFigure);
   shoppingCartDiv.appendChild(productNameParagraph);
@@ -122,7 +126,15 @@ const addToCartButtons = document.querySelectorAll('.product-info figure');
 addToCartButtons.forEach(button => {
   button.addEventListener('click', addToCart);
 });
+function recalculateTotal() {
+  const mountPriceElements = Array.from(document.querySelectorAll('.mount-price'));
+  const totalAmount = mountPriceElements.reduce((sum, element) => {
+    return sum + parseFloat(element.innerText.replace('$', ''));
+  }, 0);
 
+  const totalAmountParagraph = myOrderContent.querySelector('.order p:last-child');
+  totalAmountParagraph.innerText = '$' + totalAmount.toFixed(2);
+}
 const orderDiv = document.createElement('div');
 orderDiv.classList.add('order');
 
