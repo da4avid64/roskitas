@@ -132,7 +132,7 @@ totalSpan.innerText = 'Total';
 orderParagraph.appendChild(totalSpan);
 
 const totalAmountParagraph = document.createElement('p');
-totalAmountParagraph.innerText = '$560.00';
+totalAmountParagraph.innerText = '$0';
 
 orderDiv.appendChild(orderParagraph);
 orderDiv.appendChild(totalAmountParagraph);
