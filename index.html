@@ -11,12 +11,13 @@
     <header class="head">   
         <nav>
             <img src="./assets/icon_menu.svg" alt="" class="burguer-menu">  <!-- menu mobile -->     
-            <span class="logo">Roskitas</span>
+           
             <div class="menu">
+              <span class="logo">You & me</span>
                 <div class="menu-list"> 
-                    <ul >
-                        <li><a href="">Nuestros productos</a></li> <!-- seccion de categorias -->
-                    </ul>
+                    <!-- <ul >
+                        <li><a href="">Nuestros productos</a></li> seccion de categorias 
+                    </ul> -->
                 </div>
                 
     
@@ -25,7 +26,7 @@
                         <li class="derecha-email">ejemplo@example.com</li>
                         <li class="derecha-shopping-cart">
                           <img src="./assets/icon_shopping_cart.svg" alt="shopping cart">
-                          <div>2</div>
+                          <div id="item-shop">2</div>
                         </li>
                     </ul>
                 </div>
@@ -89,59 +90,62 @@
                 </ul>
               </div>
         </nav>
-        <aside class="product-detail inactive">
+        <aside id="shoppingCartContainer" class="inactive">
             <div class="title-container">
               <img src="./assets/flechita.svg" alt="arrow">
               <p class="title">My order</p>
             </div>
         
             <div class="my-order-content">
-              <div class="shopping-cart">
-                <figure>
-                  <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src="./assets/icon_close.png" alt="close">
-              </div>
-        
-              <div class="shopping-cart">
-                <figure>
-                  <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src="./assets/icon_close.png" alt="close">
-              </div>
-        
-              <div class="shopping-cart">
-                <figure>
-                  <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src="./assets/icon_close.png" alt="close">
-              </div>
-        
-              <div class="order">
-                <p>
-                  <span>Total</span>
-                </p>
-                <p>$560.00</p>
-              </div>
-        
-              <button class="primary-button">
-                Checkout
-              </button>
             </div>
           </div>
           </aside>
         
     </header> 
+    <aside id="product-detail" class="inactive">
+      <div class="product-detail-close">
+        <img src="./icons/icon_close.png" alt="close">
+      </div>
+      <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+      <div class="product-info">
+        <p>$35,00</p>
+        <p>Bike</p>
+        <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
+        <button class="primary-button add-to-cart-button">
+          <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+          Add to cart
+        </button>
+      </div>
+    </aside>
     <section class="main-container">
+      <!-- <section class="about-us">
+        <h2>Sobre nosotros</h2>
+        <p>Somos una panadería y pastelería artesanal que se dedica a ofrecer productos frescos y de alta calidad. Nuestros productos están elaborados con ingredientes naturales y de origen local para garantizar el mejor sabor y textura.En nuestra panadería podrás encontrar una amplia variedad de productos, desde panes tradicionales hasta pasteles y postres para cualquier ocasión. Todos nuestros productos están hechos a mano y horneados diariamente para garantizar la frescura y calidad.</p>
+        
+      </section>
+      <section class="about-us">
+        <h2>Nuestros productos</h2>
+        <p>En Roskitas nos enorgullecemos de ofrecer productos de alta calidad elaborados con ingredientes naturales y de origen local. Nuestro pan es horneado diariamente para garantizar su frescura y sabor. También ofrecemos una amplia variedad de pasteles, postres y panes especiales para cualquier ocasión.Además, nos aseguramos de que todos nuestros productos sean frescos y estén listos para llevar.</p>
+      </section> -->
+      <!-- <section id="panques">
+        <h2 class='product-title'>Panques</h2>
+        <p>Los panques de Roskitas están hechos con ingredientes de alta calidad y sin conservantes ni aditivos artificiales. Cada bocado es una explosión de sabor y una fuente de energía natural. Prueba nuestros sabores clásicos como vainilla y chocolate, o aventúrate a probar nuestras creaciones más innovadoras.</p>
+        <a href="#" class='button'>Comprar panques</a>
+      </section>
+      
+      <section id="pizzas">
+        <h2 class='product-title'>Pizzas</h2>
+        <p>Nuestras pitzas son un deleite para el paladar, con ingredientes frescos y saludables que hacen de cada rebanada una experiencia inolvidable. Desde nuestras opciones vegetarianas hasta nuestras pizzas gourmet, siempre encontrarás algo para satisfacer tus antojos.</p>
+        <a href="#" class='button' >Comprar pizzas</a>
+      </section>
+      
+      <section id="leche-de-soya">
+        <h2 class='product-title' >Leche de soya</h2>
+        <p>Si estás buscando una alternativa saludable a la leche de vaca, nuestra leche de soya es la respuesta. Rica en proteínas, baja en grasas saturadas y sin lactosa, es la opción perfecta para aquellos que buscan mantener una dieta saludable y equilibrada.</p>
+        <a href="#" class='button'>Comprar leche de soya</a>
+      </section> -->
       <div class="cards-container">
-<!--   
-        <div class="product-card">
+        <!-- <div class="product-card">
           <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
           <div class="product-info">
             <div>
@@ -152,11 +156,14 @@
               <img src="./assets/bt_add_to_cart.svg" alt="">
             </figure>
           </div>
-        </div> -->  
+        </div> -->
 
       </div>
     </section>
-
+	
+  <footer>
+		<p>Derechos reservados © 2023 Roskitas</p>
+	</footer>
     <script src="./main.js"></script>
 </body>
 </html>
