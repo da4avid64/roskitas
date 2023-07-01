@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 
 body {
@@ -49,6 +50,25 @@ nav {
   justify-content: space-around;
 }
 
+.menu ul li {
+  list-style: none;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: var(--light-green);
+  
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.menu ul li a:hover {
+  border: 1px solid var(--light-green);
+  color: var(--logo);
+}
+.menu-list ul{
+  display: flex;
+}
 .logo {
   color: var(--logo);
   font-weight: 700;
@@ -57,16 +77,6 @@ nav {
   padding: 8px 0;
 }
 
-.menu ul li {
-  list-style: none;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  color: var(--amarillo-letra);
-  font-weight: 500;
-  font-size: var(--sm);
-}
 
 .shopping {
   display: block;
@@ -86,18 +96,6 @@ nav {
   display: flex;
 }
 
-.menu ul li a {
-  text-decoration: none;
-  color: var(--light-green);
-  border: 1px solid var(--green-background);
-  padding: 8px;
-  border-radius: 8px;
-}
-
-.menu ul li a:hover {
-  border: 1px solid var(--light-green);
-  color: var(--amarillo-secundario);
-}
 
 .derecha-email {
   color: var(--light-green);
@@ -381,10 +379,15 @@ aside {
   text-align: center;
   padding: 20px;
   background-color: var(--light-green);
+  font-size: 16px;
 }
 
-.about-us h2 {
-  padding: 40px 20px 10px 20px;
+.about-us h1 {
+  font-size: 48px;
+}
+.about-us p {
+  font-weight: 500;
+  font-size: 12px;
 }
 
 /*product list*/

@@ -105,6 +105,7 @@ function addToCart() {
   closeIcon.addEventListener('click', function() {
     shoppingCartDiv.remove();
     recalculateTotal();
+    updateCartItemCount();
   });
 
   shoppingCartDiv.appendChild(productFigure);
@@ -120,16 +121,24 @@ function addToCart() {
 
   const totalAmountParagraph = myOrderContent.querySelector('.order p:last-child');
   totalAmountParagraph.innerText = '$' + totalAmount.toFixed(2);
+  updateCartItemCount(); 
 }
+function updateCartItemCount() {
+  const shoppingCartItems = document.querySelectorAll('.shopping-cart');
+  const itemCount = shoppingCartItems.length;
 
+  const itemShop = document.querySelector('#item-shop');
+  itemShop.innerText = itemCount;
+}
 const addToCartButtons = document.querySelectorAll('.product-info figure');
 addToCartButtons.forEach(button => {
   button.addEventListener('click', addToCart);
 });
+
 function recalculateTotal() {
   const mountPriceElements = Array.from(document.querySelectorAll('.mount-price'));
   const totalAmount = mountPriceElements.reduce((sum, element) => {
-    return sum + parseFloat(element.innerText.replace('$', ''));
+    return sum + parseFloat(element.innerText.replace('$', ''));  
   }, 0);
 
   const totalAmountParagraph = myOrderContent.querySelector('.order p:last-child');
@@ -155,3 +164,5 @@ checkoutButton.innerText = 'Checkout';
 
 myOrderContent.appendChild(orderDiv);
 myOrderContent.appendChild(checkoutButton);
+
+
